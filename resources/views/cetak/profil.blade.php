@@ -37,6 +37,7 @@
         Rekapitulasi Profil RT Di Wilayah RW {{ $warga->rw->rw }} / RT {{ $warga->rt}}<br/>
         Kelurahan {{ $warga->kel->nama_kel }} <br/>
         Kecamatan {{ $warga->kec->nama_kec}}
+        Tahun {{ now () -> year}}
     </h2> <br/> <br/>
     <table width="100%" border="0" cellspacing="0" cellpadding="2">
             <tr>
@@ -47,17 +48,17 @@
             <tr>
                 <td></td>
                 <td> Ketua RW </td>
-                <td colspan="3">: {{ ucwords(strtolower($warga->rw->ketua)) }}</td>
+                <td colspan="3">: {{ ucwords(strtoupper($warga->rw->ketua)) }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td> Pendamping </td>
-                <td colspan="3">: {{ $warga->pendamping->name }}</td>
+                <td colspan="3">: {{ ucwords(strtoupper($warga->pendamping->name)) }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td> Pokmas </td>
-                <td colspan="3">: {{ $warga->pokmas->pokmas??'' }}</td>
+                <td colspan="3">: {{ ucwords(strtoupper($warga->pokmas->pokmas??'')) }}</td>
             </tr>
             <tr>
                 <td></td>

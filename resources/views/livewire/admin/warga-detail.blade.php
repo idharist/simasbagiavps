@@ -8,7 +8,7 @@
                     {{ $warga->rw->rw??'' }} / Rt {{ $warga->rt??'' }}, Kelurahan  {{ $warga->kel->nama_kel??'' }}
             @elseif($nrw)
                     @endif
-            Tahun 2022</b></h5>
+            Tahun {{ now () -> year}}</b></h5>
     </x-slot>
     <x-slot name="close">
         <button type="button" class="btn-close" @click="showDetail = false"></button>
@@ -18,22 +18,22 @@
             <tr>
                 <td width="1"></td>
                 <td> Ketua RT </td>
-                <td colspan="6">: {{ $warga->ketua }}</td>
+                <td colspan="6">: {{ ucwords(strtoupper($warga->ketua)) }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td> Ketua RW </td>
-                <td colspan="6">: {{ ucwords(strtolower($warga->rw->ketua)) }}</td>
+                <td colspan="6">: {{ ucwords(strtoupper($warga->rw->ketua)) }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td> Pendamping </td>
-                <td colspan="6">: {{ $warga->pendamping->name }}</td>
+                <td colspan="6">: {{ ucwords(strtoupper($warga->pendamping->name)) }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td> Pokmas </td>
-                <td colspan="6">: {{ $warga->pokmas->pokmas??'' }}</td>
+                <td colspan="6">: {{ ucwords(strtoupper($warga->pokmas->pokmas??'')) }}</td>
             </tr>
             <tr>
                 <td></td>
