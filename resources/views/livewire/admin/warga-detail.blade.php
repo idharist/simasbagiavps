@@ -66,17 +66,21 @@
                 <td colspan="4"> 0 - 1 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
-                        ->where('tgl_lahir', '>', now()->subYears(1))
+                        ->where('tgl_lahir', '<', now()->subYears(1))
+                        ->where('tgl_lahir', '>', now()->subYears(2))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
-                        ->where('tgl_lahir', '>', now()->subYears(1))
+                        ->where('tgl_lahir', '<', now()->subYears(1))
+                        ->where('tgl_lahir', '>', now()->subYears(2))
                     ->count() }}
                 </td>
                 <td align="center">
-                    {{ $warga->keluarga->where('tgl_lahir', '>', now()->subYears(1))
-                    ->count() }}
+                    {{ $warga->keluarga
+                    ->where('tgl_lahir', '<', now()->subYears(1))
+                    ->where('tgl_lahir', '>', now()->subYears(2))
+                ->count() }}
                 </td>
             </tr>
             <tr>
@@ -84,22 +88,22 @@
                 <td colspan="4"> 2 - 5 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
-                        ->where('tgl_lahir', '>', now()->subYears(5))
-                        ->where('tgl_lahir', '<', now()->subYears(2))
+                        ->where('tgl_lahir', '>', now()->subYears(6))
+                        ->where('tgl_lahir', '<', now()->subYears(2)) 
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
-                        ->where('tgl_lahir', '>', now()->subYears(5))
-                        ->where('tgl_lahir', '<', now()->subYears(2))
+                        ->where('tgl_lahir', '>', now()->subYears(6))
+                        ->where('tgl_lahir', '<', now()->subYears(2)) 
                     ->count() }}
-                </td>
+                </td> 
                 <td align="center">
-                    {{ $warga->keluarga
-                    ->where('tgl_lahir', '>', now()->subYears(5))
+                   {{ $warga->keluarga
+                    ->where('tgl_lahir', '>', now()->subYears(6))
                     ->where('tgl_lahir', '<', now()->subYears(2))
                     ->count() }}
-                </td>
+                </td> 
             </tr>
             <tr>
                 <td></td>
@@ -107,19 +111,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(10))
-                        ->where('tgl_lahir', '<', now()->subYears(6))
+                        ->where('tgl_lahir', '<', now()->subYears(5))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(10))
-                        ->where('tgl_lahir', '<', now()->subYears(6))
+                        ->where('tgl_lahir', '<', now()->subYears(5))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(10))
-                    ->where('tgl_lahir', '<', now()->subYears(6))
+                    ->where('tgl_lahir', '<', now()->subYears(5))
                     ->count() }}
                 </td>
             </tr>
@@ -128,19 +132,19 @@
                 <td colspan="4"> 11 - 15 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
-                        ->where('tgl_lahir', '>', now()->subYears(15))
+                        ->where('tgl_lahir', '>', now()->subYears(16))
                         ->where('tgl_lahir', '<', now()->subYears(11))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
-                        ->where('tgl_lahir', '>', now()->subYears(15))
+                        ->where('tgl_lahir', '>', now()->subYears(16))
                         ->where('tgl_lahir', '<', now()->subYears(11))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
-                    ->where('tgl_lahir', '>', now()->subYears(15))
+                    ->where('tgl_lahir', '>', now()->subYears(16))
                     ->where('tgl_lahir', '<', now()->subYears(11))
                     ->count() }}
                 </td>
@@ -150,19 +154,19 @@
                 <td colspan="4"> 16 - 20 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
-                        ->where('tgl_lahir', '>', now()->subYears(20))
+                        ->where('tgl_lahir', '>', now()->subYears(21))
                         ->where('tgl_lahir', '<', now()->subYears(16))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
-                        ->where('tgl_lahir', '>', now()->subYears(20))
+                        ->where('tgl_lahir', '>', now()->subYears(21))
                         ->where('tgl_lahir', '<', now()->subYears(16))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
-                    ->where('tgl_lahir', '>', now()->subYears(20))
+                    ->where('tgl_lahir', '>', now()->subYears(21))
                     ->where('tgl_lahir', '<', now()->subYears(16))
                     ->count() }}
                 </td>
@@ -195,19 +199,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(30))
-                        ->where('tgl_lahir', '<', now()->subYears(26))
+                        ->where('tgl_lahir', '<', now()->subYears(25))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(30))
-                        ->where('tgl_lahir', '<', now()->subYears(26))
+                        ->where('tgl_lahir', '<', now()->subYears(25))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(30))
-                    ->where('tgl_lahir', '<', now()->subYears(26))
+                    ->where('tgl_lahir', '<', now()->subYears(25))
                     ->count() }}
                 </td>
             </tr>
@@ -217,19 +221,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(35))
-                        ->where('tgl_lahir', '<', now()->subYears(31))
+                        ->where('tgl_lahir', '<', now()->subYears(30))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(35))
-                        ->where('tgl_lahir', '<', now()->subYears(31))
+                        ->where('tgl_lahir', '<', now()->subYears(30))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(35))
-                    ->where('tgl_lahir', '<', now()->subYears(31))
+                    ->where('tgl_lahir', '<', now()->subYears(30))
                     ->count() }}
                 </td>
             </tr>
@@ -239,19 +243,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(40))
-                        ->where('tgl_lahir', '<', now()->subYears(36))
+                        ->where('tgl_lahir', '<', now()->subYears(35))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(40))
-                        ->where('tgl_lahir', '<', now()->subYears(36))
+                        ->where('tgl_lahir', '<', now()->subYears(35))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(40))
-                    ->where('tgl_lahir', '<', now()->subYears(36))
+                    ->where('tgl_lahir', '<', now()->subYears(35))
                     ->count() }}
                 </td>
             </tr>
@@ -261,19 +265,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(45))
-                        ->where('tgl_lahir', '<', now()->subYears(41))
+                        ->where('tgl_lahir', '<', now()->subYears(40))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(45))
-                        ->where('tgl_lahir', '<', now()->subYears(41))
+                        ->where('tgl_lahir', '<', now()->subYears(40))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(45))
-                    ->where('tgl_lahir', '<', now()->subYears(41))
+                    ->where('tgl_lahir', '<', now()->subYears(40))
                     ->count() }}
                 </td>
             </tr>
@@ -283,19 +287,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(50))
-                        ->where('tgl_lahir', '<', now()->subYears(46))
+                        ->where('tgl_lahir', '<', now()->subYears(45))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(50))
-                        ->where('tgl_lahir', '<', now()->subYears(46))
+                        ->where('tgl_lahir', '<', now()->subYears(45))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(50))
-                    ->where('tgl_lahir', '<', now()->subYears(46))
+                    ->where('tgl_lahir', '<', now()->subYears(45))
                     ->count() }}
                 </td>
             </tr>
@@ -305,19 +309,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(55))
-                        ->where('tgl_lahir', '<', now()->subYears(51))
+                        ->where('tgl_lahir', '<', now()->subYears(50))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(55))
-                        ->where('tgl_lahir', '<', now()->subYears(51))
+                        ->where('tgl_lahir', '<', now()->subYears(50))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(55))
-                    ->where('tgl_lahir', '<', now()->subYears(51))
+                    ->where('tgl_lahir', '<', now()->subYears(50))
                     ->count() }}
                 </td>
             </tr>
@@ -327,19 +331,19 @@
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
                         ->where('tgl_lahir', '>', now()->subYears(60))
-                        ->where('tgl_lahir', '<', now()->subYears(56))
+                        ->where('tgl_lahir', '<', now()->subYears(55))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
                         ->where('tgl_lahir', '>', now()->subYears(60))
-                        ->where('tgl_lahir', '<', now()->subYears(56))
+                        ->where('tgl_lahir', '<', now()->subYears(55))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
                     ->where('tgl_lahir', '>', now()->subYears(60))
-                    ->where('tgl_lahir', '<', now()->subYears(56))
+                    ->where('tgl_lahir', '<', now()->subYears(55))
                     ->count() }}
                 </td>
             </tr>
@@ -348,17 +352,17 @@
                 <td colspan="4"> > 61  </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'L')
-                        ->where('tgl_lahir', '<', now()->subYears(61))
+                        ->where('tgl_lahir', '<', now()->subYears(60))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga->where('jk', '=', 'P')
-                        ->where('tgl_lahir', '<', now()->subYears(61))
+                        ->where('tgl_lahir', '<', now()->subYears(60))
                     ->count() }}
                 </td>
                 <td align="center">
                     {{ $warga->keluarga
-                    ->where('tgl_lahir', '<', now()->subYears(61))
+                    ->where('tgl_lahir', '<', now()->subYears(60))
                     ->count() }}
                 </td>
             </tr>
@@ -1656,6 +1660,75 @@
                   ->count() }}     
                 </td>
             </tr>
+            {{-- Pekerjaan Tukang Parkir --}}
+            <tr>
+                <td ></td>
+                <td  colspan="4">Tukang Parkir</td>
+                <td align="center">
+                    {{ $warga->keluarga->where('jk', '=', 'L')
+                        ->where('pekerjaan', '=', 'Tukang Parkir')
+                    ->count() }}
+                </td>
+                <td align="center">
+                    {{ $warga->keluarga->where('jk', '=', 'P')
+                        ->where('pekerjaan', '=', 'Tukang Parkir')
+                ->count() }}
+                </td>
+                <td align="center" >
+                    {{ $warga->keluarga
+                    ->where('pekerjaan', '=', 'Tukang Parkir')
+                ->count() }}     
+                </td>
+            </tr>
+            {{-- End --}}
+            {{-- ----------------------------------------------------------------------- --}}
+            {{-- Pekerjaan Sopir --}}
+            <tr>
+                <td ></td>
+                <td  colspan="4">Sopir</td>
+                <td align="center">
+                    {{ $warga->keluarga->where('jk', '=', 'L')
+                        ->where('pekerjaan', '=', 'Sopir')
+                    ->count() }}
+                </td>
+                <td align="center">
+                    {{ $warga->keluarga->where('jk', '=', 'P')
+                        ->where('pekerjaan', '=', 'Sopir')
+                ->count() }}
+                </td>
+                <td align="center" >
+                    {{ $warga->keluarga
+                    ->where('pekerjaan', '=', 'Sopir')
+                ->count() }}     
+                </td>
+            </tr>
+            {{-- End --}}
+{{-- ----------------------------------------------------------------------- --}}
+            {{-- Pekerjaan Satpam --}}
+            <tr>
+                <td ></td>
+                <td  colspan="4">Satpam</td>
+                <td align="center">
+                    {{ $warga->keluarga->where('jk', '=', 'L')
+                        ->where('pekerjaan', '=', 'Satpam')
+                    ->count() }}
+                </td>
+                <td align="center">
+                    {{ $warga->keluarga->where('jk', '=', 'P')
+                        ->where('pekerjaan', '=', 'Satpam')
+                ->count() }}
+                </td>
+                <td align="center" >
+                    {{ $warga->keluarga
+                    ->where('pekerjaan', '=', 'Satpam')
+                ->count() }}     
+                </td>
+            </tr>
+            {{-- End --}}
+
+
+
+
             <tr>
                 <td ></td>
                 <td  colspan="4">Lainnya</td>
